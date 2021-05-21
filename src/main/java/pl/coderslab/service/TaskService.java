@@ -5,6 +5,7 @@ import pl.coderslab.repository.TaskRepository;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +35,9 @@ public class TaskService {
 
     public boolean updateTask(int index, String desc, String date, boolean important) throws RuntimeException{
         try{
+//            LocalDate date2 = LocalDate.now();
+//            date2.isBefore(LocalDate.parse(date));
+
             Date date1 = simpleDateFormat.parse(date);
             if(date1.before(new Date())){
                 throw new RuntimeException("date is in the past");
